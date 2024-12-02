@@ -40,6 +40,7 @@ set(
         ${IMGV_CORE_DIR}/renderer/renderer.hpp
         ${IMGV_CORE_DIR}/apis/opengl/opengl.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.hpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.hpp
 
 )
 
@@ -49,44 +50,30 @@ set(
         ${IMGV_CORE_DIR}/renderer/buffers.cpp
         ${IMGV_CORE_DIR}/renderer/renderer.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.cpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.cpp
 )
-
-message(STATUS "===============================================================================")
-
-message(STATUS "CMAKE_BUILD_TYPE_INIT: ${CMAKE_BUILD_TYPE_INIT}")
-if(CMAKE_BUILD_TYPE_INIT STREQUAL "Debug")
-    add_compile_definitions(IMGV_DEBUG)
-endif()
-
-message(STATUS "CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}")
-if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    add_compile_definitions(IMGV_PLATFORM_WINDOWS)
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    add_compile_definitions(IMGV_PLATFORM_LINUX)
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin" OR CMAKE_SYSTEM_NAME STREQUAL "iOS" OR CMAKE_SYSTEM_NAME STREQUAL "MacOS")
-    add_compile_definitions(IMGV_PLATFORM_MACOS)
-endif()
-
-if(BUILD_SHARED_LIBS)
-    message(STATUS "BUILD_SHARED_LIBS: ON")
-    add_compile_definitions(IMGV_SHARED)
-else()
-    message(STATUS "BUILD_SHARED_LIBS: OFF")
-    add_compile_definitions(IMGV_STATIC)
-endif()
-
-message(STATUS "===============================================================================")
 
 add_library(imgv_core STATIC ${IMGV_CORE_HEADERS} ${IMGV_CORE_SOURCES})
 target_include_directories(imgv_core PUBLIC ${IMGV_CORE_INCLUDE_DIR})
-target_link_libraries(
-    imgv_core 
-        PUBLIC 
-            glad::glad 
-            glfw
-            spdlog::spdlog
-            glm::glm 
-            stb::stb 
-            imgui::imgui
-)
+target_link_libraries(imgv_core PUBLIC glad::glad glfw spdlog::spdlog glm::glm stb::stb imgui::imgui)
+
+if(CMAKE_BUILD_TYPE_INIT STREQUAL "Debug")
+    add_compile_definitions(IMGV_DEBUG)
+else()
+    add_compile_definitions(IMGV_RELEASE)
+endif()
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    target_compile_definitions(imgv_core PUBLIC IMGV_PLATFORM_WINDOWS)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_compile_definitions(imgv_core PUBLIC IMGV_PLATFORM_LINUX)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    target_compile_definitions(imgv_core PUBLIC IMGV_PLATFORM_MACOS)
+endif()
+
+if(BUILD_SHARED_LIBS)
+    add_compile_definitions(IMGV_SHARED)
+else()
+    add_compile_definitions(IMGV_STATIC)
+endif()
 
