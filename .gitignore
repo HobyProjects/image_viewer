@@ -1,0 +1,5 @@
+.vscode
+.vs
+build
+Vendors/build
+CMakePresets.json
