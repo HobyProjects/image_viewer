@@ -84,7 +84,7 @@ namespace IMGV::Core
     {
         public:
             VertexBuffer() = default;
-            ~VertexBuffer() = default;
+            virtual ~VertexBuffer() = default;
 
             virtual void Bind() const = IMGV_NULL;
             virtual void Unbind() const = IMGV_NULL;
@@ -99,7 +99,7 @@ namespace IMGV::Core
     {
         public:
             IndexBuffer() = default;
-            ~IndexBuffer() = default;
+            virtual ~IndexBuffer() = default;
 
             virtual void Bind() const = IMGV_NULL;
             virtual void Unbind() const = IMGV_NULL;

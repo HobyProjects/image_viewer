@@ -92,6 +92,12 @@ namespace IMGV::Core
             UInt32 m_Y{IMGV_NULL}; 
     };
 
+    /**
+     * @brief Event emitted when the window gains focus.
+     * 
+     * This event is triggered whenever the window gains focus, indicating 
+     * that it is now the active window receiving input.
+     */
     class IMGV_API WindowFocusGainedEvent : public Event
     {
         public:
@@ -102,6 +108,12 @@ namespace IMGV::Core
             EVENT_CLASS_TYPE(EventType::WindowFocusGainEvent);
     };
 
+    /**
+     * @brief Event emitted when the window loses focus.
+     * 
+     * This event is triggered whenever the window loses focus, indicating
+     * that it is no longer the active window receiving input.
+     */
     class IMGV_API WindowFocusLostEvent : public Event
     {
         public:
@@ -112,6 +124,13 @@ namespace IMGV::Core
             EVENT_CLASS_TYPE(EventType::WindowFocusLostEvent);
     };
 
+    /**
+     * @brief Event emitted when the window is maximized.
+     * 
+     * This event is triggered whenever the window is maximized, either by
+     * clicking the maximize button or by calling the corresponding function
+     * in the windowing API.
+     */
     class IMGV_API WindowMaximizedEvent : public Event
     {
         public:
@@ -122,6 +141,13 @@ namespace IMGV::Core
             EVENT_CLASS_TYPE(EventType::WindowMaximizeEvent);
     };
 
+    /**
+     * @brief Event emitted when the window is minimized.
+     * 
+     * This event is triggered whenever the window is minimized, 
+     * either by clicking the minimize button or by calling the 
+     * corresponding function in the windowing API.
+     */
     class IMGV_API WindowMinimizedEvent : public Event
     {
         public:

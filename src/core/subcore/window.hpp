@@ -61,7 +61,7 @@ namespace IMGV::Core
     {
         public:
             Window() = default;
-            ~Window() = default;
+            virtual ~Window() = default;
 
             virtual IMGV_Window GetNativeWindow() const = IMGV_NULL;
             virtual WindowSpecification& GetWindowSpecification() = IMGV_NULL;
