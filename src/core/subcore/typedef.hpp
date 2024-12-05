@@ -24,7 +24,8 @@ typedef float                       Float;
 typedef double                      Double;       
 typedef std::string                 String;        
 typedef const char*                 CString;       
-typedef bool                        Boolean;      
+typedef bool                        Boolean;
+typedef void*                       IMGV_Window;    
 
 template<typename T> using Ref      = std::shared_ptr<T>;         
 template<typename T> using WeakRef  = std::weak_ptr<T>;      

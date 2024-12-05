@@ -29,7 +29,7 @@ namespace IMGV::Core
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
-    void GL_VertexBuffer::SetData(const void* data, UInt32 size)
+    void GL_VertexBuffer::SetData(const VertexBufferData data, UInt32 size)
     {
         glNamedBufferSubData(m_VertexBufferID, 0, size, data);
     }

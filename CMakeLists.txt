@@ -38,9 +38,12 @@ set(
         ${IMGV_CORE_DIR}/events/window_events.hpp
         ${IMGV_CORE_DIR}/renderer/buffers.hpp
         ${IMGV_CORE_DIR}/renderer/renderer.hpp
+        ${IMGV_CORE_DIR}/renderer/context.hpp
         ${IMGV_CORE_DIR}/apis/opengl/opengl.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.hpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_debug.hpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_context.hpp
 
 )
 
@@ -49,8 +52,11 @@ set(
         ${IMGV_CORE_DIR}/subcore/log.cpp
         ${IMGV_CORE_DIR}/renderer/buffers.cpp
         ${IMGV_CORE_DIR}/renderer/renderer.cpp
+        ${IMGV_CORE_DIR}/renderer/context.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.cpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_debug.cpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_context.cpp
 )
 
 add_library(imgv_core STATIC ${IMGV_CORE_HEADERS} ${IMGV_CORE_SOURCES})
