@@ -37,6 +37,7 @@ set(
         ${IMGV_CORE_DIR}/events/mouse_events.hpp
         ${IMGV_CORE_DIR}/events/keyboard_events.hpp
         ${IMGV_CORE_DIR}/events/window_events.hpp
+        ${IMGV_CORE_DIR}/events/events_receiver.hpp
         ${IMGV_CORE_DIR}/renderer/buffers.hpp
         ${IMGV_CORE_DIR}/renderer/renderer.hpp
         ${IMGV_CORE_DIR}/renderer/context.hpp
@@ -47,6 +48,7 @@ set(
         ${IMGV_CORE_DIR}/apis/opengl/gl_context.hpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw.hpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.hpp
+        ${IMGV_CORE_DIR}/apis/glfw/glfw_event_receiver.hpp
 
 )
 
@@ -54,6 +56,7 @@ set(
     IMGV_CORE_SOURCES
         ${IMGV_CORE_DIR}/subcore/log.cpp
         ${IMGV_CORE_DIR}/subcore/window.cpp
+        ${IMGV_CORE_DIR}/events/events_receiver.cpp
         ${IMGV_CORE_DIR}/renderer/buffers.cpp
         ${IMGV_CORE_DIR}/renderer/renderer.cpp
         ${IMGV_CORE_DIR}/renderer/context.cpp
@@ -62,6 +65,7 @@ set(
         ${IMGV_CORE_DIR}/apis/opengl/gl_debug.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_context.cpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.cpp
+        ${IMGV_CORE_DIR}/apis/glfw/glfw_event_receiver.cpp
 )
 
 add_library(imgv_core STATIC ${IMGV_CORE_HEADERS} ${IMGV_CORE_SOURCES})

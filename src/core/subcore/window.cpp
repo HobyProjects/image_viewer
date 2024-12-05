@@ -8,7 +8,7 @@ namespace IMGV::Core
     Ref<ServiceAPI> GetPlatformServiceAPI()
     {
         #ifdef IMGV_PLATFORM_WINDOWS
-            //TODO: This should Win32 API, for now it's GLFW
+            //TODO: This should be Win32 API, for now it's GLFW
             if(!s_ServiceAPIInitialized)
             {
                 s_ServiceAPI = CreateRef<GLFW_ServiceAPI>();

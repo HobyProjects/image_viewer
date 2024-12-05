@@ -182,18 +182,18 @@ namespace IMGV::Core
     using EventCallBack = std::function<void(Event&)>;
 }
 
-    /**
-     * @brief A macro to create an event callback.
-     * 
-     * This macro will create a lambda function that takes an Event& as its
-     * argument and returns void. The lambda function will call the function
-     * passed as an argument to the macro with the event as its argument, and
-     * will also set the Handled flag of the event to true if the function
-     * returns true.
-     * 
-     * @param fn The function to call when the event is dispatched.
-     * 
-     * @returns A lambda function that takes an Event& as its argument and
-     * returns void.
-     */
+/**
+ * @brief A macro to create an event callback.
+ * 
+ * This macro will create a lambda function that takes an Event& as its
+ * argument and returns void. The lambda function will call the function
+ * passed as an argument to the macro with the event as its argument, and
+ * will also set the Handled flag of the event to true if the function
+ * returns true.
+ * 
+ * @param fn The function to call when the event is dispatched.
+ * 
+ * @returns A lambda function that takes an Event& as its argument and
+ * returns void.
+ */
 #define IMGV_EVENT_CALLBACK(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
