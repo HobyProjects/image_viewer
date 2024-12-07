@@ -39,6 +39,7 @@ template<typename T, typename... Args> inline Scope<T>  CreateScope(Args&&... ar
 #define IMGV_NULL     0
 #define IMGV_NULLPTR  nullptr
 #define IMGV_NODISCARD [[nodiscard]]
+#define IMGV_ERROR    -1
 
 //==============================================================================
 

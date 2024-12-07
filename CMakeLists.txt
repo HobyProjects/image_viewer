@@ -33,22 +33,29 @@ set(
         ${IMGV_CORE_DIR}/subcore/log.hpp
         ${IMGV_CORE_DIR}/subcore/keycodes.hpp
         ${IMGV_CORE_DIR}/subcore/window.hpp
+
         ${IMGV_CORE_DIR}/events/events.hpp
         ${IMGV_CORE_DIR}/events/mouse_events.hpp
         ${IMGV_CORE_DIR}/events/keyboard_events.hpp
         ${IMGV_CORE_DIR}/events/window_events.hpp
         ${IMGV_CORE_DIR}/events/events_receiver.hpp
         ${IMGV_CORE_DIR}/events/inputs_handler.hpp
+
         ${IMGV_CORE_DIR}/renderer/buffers.hpp
         ${IMGV_CORE_DIR}/renderer/renderer.hpp
         ${IMGV_CORE_DIR}/renderer/context.hpp
         ${IMGV_CORE_DIR}/renderer/shader.hpp
+        ${IMGV_CORE_DIR}/renderer/vertex_array.hpp
+
+
         ${IMGV_CORE_DIR}/apis/opengl/opengl.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_debug.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_context.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_shader.hpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_vertex_array.hpp
+
         ${IMGV_CORE_DIR}/apis/glfw/glfw.hpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.hpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_event_receiver.hpp
@@ -60,17 +67,24 @@ set(
     IMGV_CORE_SOURCES
         ${IMGV_CORE_DIR}/subcore/log.cpp
         ${IMGV_CORE_DIR}/subcore/window.cpp
+
         ${IMGV_CORE_DIR}/events/events_receiver.cpp
         ${IMGV_CORE_DIR}/events/inputs_handler.cpp
+
         ${IMGV_CORE_DIR}/renderer/buffers.cpp
         ${IMGV_CORE_DIR}/renderer/renderer.cpp
         ${IMGV_CORE_DIR}/renderer/context.cpp
         ${IMGV_CORE_DIR}/renderer/shader.cpp
+        ${IMGV_CORE_DIR}/renderer/vertex_array.cpp
+
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_debug.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_context.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_shader.cpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_vertex_array.cpp
+
+
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.cpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_event_receiver.cpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_inputs_handler.cpp
