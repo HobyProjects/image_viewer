@@ -5,7 +5,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GL_Texture2D : public Texture2D
+    class IMGV_API GL_Texture2D final : public Texture2D
     {
         public:
             GL_Texture2D(UInt32 width, UInt32 height);

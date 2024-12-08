@@ -5,7 +5,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GL_VertexArray : public VertexArray
+    class IMGV_API GL_VertexArray final : public VertexArray
     {
         public:
             GL_VertexArray() = default;

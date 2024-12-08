@@ -5,7 +5,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GL_VertexBuffer : public VertexBuffer
+    class IMGV_API GL_VertexBuffer final : public VertexBuffer
     {
         public:
             GL_VertexBuffer() = default;
@@ -25,7 +25,7 @@ namespace IMGV::Core
             BufferLayout m_Layout;
     };
 
-    class IMGV_API GL_IndexBuffer : public IndexBuffer
+    class IMGV_API GL_IndexBuffer final : public IndexBuffer
     {
         public:
             GL_IndexBuffer() = default;

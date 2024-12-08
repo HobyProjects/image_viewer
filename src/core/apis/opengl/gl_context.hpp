@@ -9,7 +9,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GL_Context : public Context
+    class IMGV_API GL_Context final : public Context
     {
         public:
             GL_Context() = default;

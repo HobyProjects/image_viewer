@@ -5,7 +5,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GL_Shader : public Shader
+    class IMGV_API GL_Shader final : public Shader
     {
         public:
             GL_Shader() = default;
