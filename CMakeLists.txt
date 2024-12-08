@@ -33,6 +33,8 @@ set(
         ${IMGV_CORE_DIR}/subcore/log.hpp
         ${IMGV_CORE_DIR}/subcore/keycodes.hpp
         ${IMGV_CORE_DIR}/subcore/window.hpp
+        ${IMGV_CORE_DIR}/subcore/timer.hpp
+
 
         ${IMGV_CORE_DIR}/events/events.hpp
         ${IMGV_CORE_DIR}/events/mouse_events.hpp
@@ -87,7 +89,6 @@ set(
         ${IMGV_CORE_DIR}/apis/opengl/gl_shader.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_vertex_array.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_texture.cpp
-
 
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.cpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_event_receiver.cpp
