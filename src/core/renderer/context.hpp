@@ -16,5 +16,5 @@ namespace IMGV::Core
             virtual void ChangeSwapInterval(UInt32 interval) = IMGV_NULL;
     };
     
-    IMGV_API Ref<Context> CreateContext(IMGV_Window window);
+    IMGV_NODISCARD IMGV_API Ref<Context> CreateContext(IMGV_Window window);
 }

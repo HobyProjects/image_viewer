@@ -5,9 +5,9 @@ namespace IMGV::Core
     #ifdef IMGV_DEBUG
         void GLAPIENTRY DebugMessageCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam)
         {       
-            const char* type_str        = nullptr;
-            const char* severity_str    = nullptr;
-            const char* source_str      = nullptr;
+            CString type_str        = IMGV_NULLPTR;
+            CString severity_str    = IMGV_NULLPTR;
+            CString source_str      = IMGV_NULLPTR;
             
             switch(type)
             {

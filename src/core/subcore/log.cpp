@@ -12,7 +12,7 @@ namespace IMGV::Core
     {
         std::vector<spdlog::sink_ptr> log_skin{};
         log_skin.emplace_back(CreateRef<spdlog::sinks::stdout_color_sink_mt>());
-        log_skin.emplace_back(CreateRef<spdlog::sinks::basic_file_sink_mt>("imgv.log", true));
+        log_skin.emplace_back(CreateRef<spdlog::sinks::basic_file_sink_mt>("imgv.log", IMGV_TRUE));
         log_skin[0]->set_pattern("%^[%T] %n: %v%$");
         log_skin[1]->set_pattern("[%T][%l] %n: %v");
 

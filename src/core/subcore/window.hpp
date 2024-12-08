@@ -52,6 +52,7 @@ namespace IMGV::Core
         public:
             ServiceAPI() = default;
             virtual ~ServiceAPI() = default;
+
             virtual Boolean Init() = IMGV_NULL;
             virtual void Shutdown() = IMGV_NULL;
             virtual ServiceAPIs GetAPI() = IMGV_NULL;
@@ -69,6 +70,6 @@ namespace IMGV::Core
             virtual void SwapBuffers() = IMGV_NULL;
     };
 
-    IMGV_API Ref<ServiceAPI> GetPlatformServiceAPI();
-    IMGV_API Ref<Window> CreateWindow(const String& title, ServiceAPIs api);
+    IMGV_NODISCARD IMGV_API Ref<ServiceAPI> GetPlatformServiceAPI();
+    IMGV_NODISCARD IMGV_API Ref<Window> CreateWindow(const String& title, ServiceAPIs api);
 }

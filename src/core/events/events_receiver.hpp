@@ -17,5 +17,5 @@ namespace IMGV::Core
             virtual void SetCallbackWindow(const Ref<Window>& window, const EventCallBack& callBack) = IMGV_NULL;
     };
 
-    IMGV_API Ref<EventsReceiver> CreateEventsReceiver(ServiceAPIs api);
+    IMGV_NODISCARD IMGV_API Ref<EventsReceiver> CreateEventsReceiver(ServiceAPIs api);
 }

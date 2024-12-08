@@ -20,7 +20,7 @@ namespace IMGV::Core
             return IMGV_FALSE;
         }
 
-        auto state = glfwGetKey((GLFWwindow*)s_TargetWindow->GetNativeWindow(), static_cast<int>(keyCode));
+        auto state = glfwGetKey((GLFWwindow*)s_TargetWindow->GetNativeWindow(), static_cast<Int32>(keyCode));
         return state == IMGV::Core::KeyState::KEY_PRESSED || state == IMGV::Core::KeyState::KEY_REPEAT;
     }
 
@@ -32,7 +32,7 @@ namespace IMGV::Core
             return IMGV_FALSE;
         }
 
-        auto state = glfwGetMouseButton((GLFWwindow*)s_TargetWindow->GetNativeWindow(), static_cast<int>(button));
+        auto state = glfwGetMouseButton((GLFWwindow*)s_TargetWindow->GetNativeWindow(), static_cast<Int32>(button));
         return state == IMGV::Core::MouseButtonState::MOUSE_BUTTON_PRESSED;
     }
 

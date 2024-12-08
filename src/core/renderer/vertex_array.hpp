@@ -23,5 +23,5 @@ namespace IMGV::Core
             virtual const Ref<IndexBuffer>& GetIdexBuffer() const = IMGV_NULL;
     };
 
-    IMGV_API Ref<VertexArray> CreateVertexArray();
+    IMGV_NODISCARD IMGV_API Ref<VertexArray> CreateVertexArray();
 }

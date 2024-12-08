@@ -129,7 +129,7 @@ namespace IMGV::Core
 
     void GLFW_EventsReceiver::PollEvents()
     {
-        glfwPollEvents();
+        glfwWaitEvents();
     }
 
     void GLFW_EventsReceiver::SetCallbackWindow(const Ref<Window>& window, const EventCallBack & eventsCallback)

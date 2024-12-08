@@ -34,7 +34,7 @@ namespace IMGV::Core
             String ReadShaderFiles(const std::filesystem::path& filePath);
 
         private:
-            ShaderProgramID m_programID{0};
+            ShaderProgramID m_programID{IMGV_NULL};
             String m_Name{String()};
             std::unordered_map<String, UniformLocation> m_UniformLocations;
     };

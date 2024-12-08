@@ -32,5 +32,5 @@ namespace IMGV::Core
             virtual void SetUniform(const String& uniformName, const Mat4& value) = IMGV_NULL;
     };
 
-    IMGV_API Ref<Shader> CreateShader(const String& name, const std::filesystem::path& vtxShader, const std::filesystem::path& fragShader);
+    IMGV_NODISCARD IMGV_API Ref<Shader> CreateShader(const String& name, const std::filesystem::path& vtxShader, const std::filesystem::path& fragShader);
 }

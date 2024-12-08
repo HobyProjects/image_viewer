@@ -107,7 +107,7 @@ namespace IMGV::Core
             virtual UInt32 GetCount() const = IMGV_NULL;
     };
 
-    IMGV_API Ref<VertexBuffer> CreateVertexBuffer(UInt32 allocatorSize);
-    IMGV_API Ref<VertexBuffer> CreateVertexBuffer(VertexBufferData data, UInt32 size);
-    IMGV_API Ref<IndexBuffer> CreateIndexBuffer(IndexBufferData data, UInt32 count);
+    IMGV_NODISCARD IMGV_API Ref<VertexBuffer> CreateVertexBuffer(UInt32 allocatorSize);
+    IMGV_NODISCARD IMGV_API Ref<VertexBuffer> CreateVertexBuffer(VertexBufferData data, UInt32 size);
+    IMGV_NODISCARD IMGV_API Ref<IndexBuffer> CreateIndexBuffer(IndexBufferData data, UInt32 count);
 }

@@ -17,5 +17,5 @@ namespace IMGV::Core
             virtual Vec2 GetMousePosition() = IMGV_NULL;
     };
 
-    IMGV_API Ref<InputHandler> CreateInputHandler(ServiceAPIs api);
+    IMGV_NODISCARD IMGV_API Ref<InputHandler> CreateInputHandler(ServiceAPIs api);
 }
