@@ -28,6 +28,8 @@ set(
 
 set(
     IMGV_CORE_HEADERS
+        ${IMGV_CORE_DIR}/core.hpp
+
         ${IMGV_CORE_DIR}/subcore/typedef.hpp
         ${IMGV_CORE_DIR}/subcore/base.hpp
         ${IMGV_CORE_DIR}/subcore/asserts.hpp
@@ -136,4 +138,27 @@ if(BUILD_SHARED_LIBS)
 else()
     add_compile_definitions(IMGV_STATIC)
 endif()
+
+#####################################################################################################################################################
+
+set(IMGV_APP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/app)
+set(
+    IMGV_APP_INCLUDE_DIR 
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/app/entrypoint
+)
+
+set(
+    IMGV_APP_HEADERS
+        ${IMGV_APP_DIR}/entrypoint/application.hpp
+)
+
+set(
+    IMGV_APP_SOURCES
+        ${IMGV_APP_DIR}/entrypoint/application.cpp
+        ${IMGV_APP_DIR}/entrypoint/img_view.cpp
+)
+
+add_executable(img_view ${IMGV_APP_HEADERS} ${IMGV_APP_SOURCES})
+target_include_directories(img_view PUBLIC ${IMGV_APP_INCLUDE_DIR})
+target_link_libraries(img_view PUBLIC imgv_core)
 
