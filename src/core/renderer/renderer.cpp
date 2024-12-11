@@ -65,6 +65,7 @@ namespace IMGV::Core
     void Renderer::ChangeAPI(RendererAPI api)
     {
         s_RendererAPI = api;
+        //[TODO]: Implement this function to change the renderer API
     }
 
     void Renderer::ClearColor(const Vec4& color)
