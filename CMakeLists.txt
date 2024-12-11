@@ -35,6 +35,8 @@ set(
         ${IMGV_CORE_DIR}/subcore/window.hpp
         ${IMGV_CORE_DIR}/subcore/timer.hpp
         ${IMGV_CORE_DIR}/subcore/instrument.hpp
+        ${IMGV_CORE_DIR}/subcore/layer.hpp
+        ${IMGV_CORE_DIR}/subcore/layer_stack.hpp
 
 
 
@@ -77,6 +79,7 @@ set(
     IMGV_CORE_SOURCES
         ${IMGV_CORE_DIR}/subcore/log.cpp
         ${IMGV_CORE_DIR}/subcore/window.cpp
+        ${IMGV_CORE_DIR}/subcore/layer_stack.cpp
 
         ${IMGV_CORE_DIR}/events/events_receiver.cpp
         ${IMGV_CORE_DIR}/events/inputs_handler.cpp
