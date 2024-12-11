@@ -43,6 +43,8 @@ template<typename T, typename... Args> inline Scope<T>  CreateScope(Args&&... ar
 
 //==============================================================================
 
+using namespace glm;
+
 typedef glm::vec2   Vec2;
 typedef glm::vec3   Vec3;
 typedef glm::vec4   Vec4;
