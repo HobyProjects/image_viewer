@@ -34,6 +34,8 @@ set(
         ${IMGV_CORE_DIR}/subcore/keycodes.hpp
         ${IMGV_CORE_DIR}/subcore/window.hpp
         ${IMGV_CORE_DIR}/subcore/timer.hpp
+        ${IMGV_CORE_DIR}/subcore/instrument.hpp
+
 
 
         ${IMGV_CORE_DIR}/events/events.hpp
