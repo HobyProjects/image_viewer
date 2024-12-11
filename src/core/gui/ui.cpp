@@ -470,10 +470,34 @@ namespace IMGV::Core
     void UILayer::SetTheme(UITheme theme)
     {
         m_Theme = theme;
+
+        switch(m_Theme)
+        {
+            case UITheme::Dark:
+            {
+                SetDarkTheme();
+                break;
+            }
+            case UITheme::Light:
+            {
+                SetLightTheme();
+                break;
+            }
+            case UITheme::Classic:
+            {
+                SetClassicTheme();
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        };
     }
 
     void UILayer::SetDarkTheme()
     {
+        ImGui::StyleColorsDark();
         auto& colors = ImGui::GetStyle().Colors;
 		colors[ImGuiCol_WindowBg] = ImVec4{ 0.1f, 0.105f, 0.11f, 1.0f };
 
