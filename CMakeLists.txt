@@ -49,6 +49,7 @@ set(
         ${IMGV_CORE_DIR}/renderer/shader.hpp
         ${IMGV_CORE_DIR}/renderer/vertex_array.hpp
         ${IMGV_CORE_DIR}/renderer/texture.hpp
+        ${IMGV_CORE_DIR}/renderer/frame_buffer.hpp
 
 
         ${IMGV_CORE_DIR}/apis/opengl/opengl.hpp
@@ -59,6 +60,7 @@ set(
         ${IMGV_CORE_DIR}/apis/opengl/gl_shader.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_vertex_array.hpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_texture.hpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_frame_buffer.hpp
 
         ${IMGV_CORE_DIR}/apis/glfw/glfw.hpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.hpp
@@ -81,6 +83,7 @@ set(
         ${IMGV_CORE_DIR}/renderer/shader.cpp
         ${IMGV_CORE_DIR}/renderer/vertex_array.cpp
         ${IMGV_CORE_DIR}/renderer/texture.cpp
+        ${IMGV_CORE_DIR}/renderer/frame_buffer.cpp
 
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.cpp
@@ -89,6 +92,7 @@ set(
         ${IMGV_CORE_DIR}/apis/opengl/gl_shader.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_vertex_array.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_texture.cpp
+        ${IMGV_CORE_DIR}/apis/opengl/gl_frame_buffer.cpp
 
         ${IMGV_CORE_DIR}/apis/glfw/glfw_window.cpp
         ${IMGV_CORE_DIR}/apis/glfw/glfw_event_receiver.cpp
