@@ -18,7 +18,8 @@ set(CMAKE_C_EXTENSIONS OFF)
 
 set(IMGV_CORE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/core)
 set(
-    IMGV_CORE_INCLUDE_DIR 
+    IMGV_CORE_INCLUDE_DIR
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/core 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core/events
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core/subcore
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core/renderer
@@ -159,6 +160,6 @@ set(
 )
 
 add_executable(img_view ${IMGV_APP_HEADERS} ${IMGV_APP_SOURCES})
-target_include_directories(img_view PUBLIC ${IMGV_APP_INCLUDE_DIR})
+target_include_directories(img_view PUBLIC ${IMGV_APP_INCLUDE_DIR} ${IMGV_CORE_INCLUDE_DIR})
 target_link_libraries(img_view PUBLIC imgv_core)
 

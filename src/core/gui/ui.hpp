@@ -20,10 +20,9 @@ namespace IMGV::Core
         Classic = 2     
     };
 
-    class UILayer final : Layer
+    class UILayer final : public Layer
     {
         public:
-            UILayer() : Layer("UILayer"){}
             UILayer(Ref<Window> window, UITheme theme = UITheme::Dark);
             virtual ~UILayer() = default;
 
