@@ -23,6 +23,7 @@ set(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core/subcore
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core/renderer
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core/apis
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/core/gui
 )
 
 set(
@@ -56,6 +57,9 @@ set(
         ${IMGV_CORE_DIR}/renderer/frame_buffer.hpp
         ${IMGV_CORE_DIR}/renderer/camera.hpp
         ${IMGV_CORE_DIR}/renderer/camera_2d.hpp
+
+
+        ${IMGV_CORE_DIR}/gui/ui.hpp
 
 
         ${IMGV_CORE_DIR}/apis/opengl/opengl.hpp
@@ -92,6 +96,8 @@ set(
         ${IMGV_CORE_DIR}/renderer/texture.cpp
         ${IMGV_CORE_DIR}/renderer/frame_buffer.cpp
         ${IMGV_CORE_DIR}/renderer/camera_2d.cpp
+
+        ${IMGV_CORE_DIR}/gui/ui.cpp
 
         ${IMGV_CORE_DIR}/apis/opengl/gl_buffers.cpp
         ${IMGV_CORE_DIR}/apis/opengl/gl_renderer.cpp
