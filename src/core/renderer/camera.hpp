@@ -31,9 +31,13 @@ namespace IMGV::Core
             Camera() = default;
             virtual ~Camera() = default;
 
+            Vec3 GetPositoion() const { return m_Position; }
+            Float GetRotation() const { return m_Rotation; }
+
         protected:
             Mat4 m_Projection{1.0f};
             Mat4 m_View{1.0f};
+            
             Vec3 m_Position{0.0f, 0.0f, 0.0f};
             Float m_Rotation{0.0f};
     };

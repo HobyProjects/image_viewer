@@ -7,6 +7,7 @@ namespace IMGV::Core
     class IMGV_API Camera2D : public Camera
     {
         public:
+            Camera2D(Float left, Float right, Float bottom, Float top);
             Camera2D(Float size = 10.0f, Float nearClip = -1.0f, Float farClip = 1.0f);
             virtual ~Camera2D() = default;
 
@@ -15,7 +16,9 @@ namespace IMGV::Core
             void SetAspectRatio(Float ratio);
             void SetRotation(Float rotation);
             void SetPosition(const Vec3& position);
+            
             void SetProjection(Float size = 10.0f, Float nearClip = -1.0f, Float farClip = 1.0f);
+            void SetProjection(Float left, Float right, Float bottom, Float top);
 
             const Mat4& GetView() const { return m_View; }
             const Mat4& GetProjection() const { return m_Projection; }

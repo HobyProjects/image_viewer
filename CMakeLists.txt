@@ -146,15 +146,18 @@ set(IMGV_APP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/app)
 set(
     IMGV_APP_INCLUDE_DIR 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/app/entrypoint
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/app/camera
 )
 
 set(
     IMGV_APP_HEADERS
+        ${IMGV_APP_DIR}/camera/camera_controller.hpp
         ${IMGV_APP_DIR}/entrypoint/application.hpp
 )
 
 set(
     IMGV_APP_SOURCES
+        ${IMGV_APP_DIR}/camera/camera_controller.cpp
         ${IMGV_APP_DIR}/entrypoint/application.cpp
         ${IMGV_APP_DIR}/entrypoint/img_view.cpp
 )

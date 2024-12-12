@@ -2,6 +2,14 @@
 
 namespace IMGV::Core
 {
+    Camera2D::Camera2D(Float left, Float right, Float bottom, Float top)
+    {
+        m_OrthographicSize      = (right - left) / 2.0f;
+        m_OrthographicNear      = -1.0f;
+        m_OrthographicFar       =  1.0f;
+        RefreshViewProjectionMatrix();
+    }
+
     Camera2D::Camera2D(Float size, Float nearClip, Float farClip)
     {
         m_OrthographicSize      = size;
@@ -33,6 +41,14 @@ namespace IMGV::Core
         m_OrthographicSize      = size;
         m_OrthographicNear      = nearClip;
         m_OrthographicFar       = farClip;
+        RefreshViewProjectionMatrix();
+    }
+
+    void Camera2D::SetProjection(Float left, Float right, Float bottom, Float top)
+    {
+        m_OrthographicSize      = (right - left) / 2.0f;
+        m_OrthographicNear      = -1.0f;
+        m_OrthographicFar       =  1.0f;
         RefreshViewProjectionMatrix();
     }
 
