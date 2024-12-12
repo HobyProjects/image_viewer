@@ -41,6 +41,8 @@ set(
         ${IMGV_CORE_DIR}/subcore/instrument.hpp
         ${IMGV_CORE_DIR}/subcore/layer.hpp
         ${IMGV_CORE_DIR}/subcore/layer_stack.hpp
+        ${IMGV_CORE_DIR}/subcore/ecs.hpp
+        ${IMGV_CORE_DIR}/subcore/components.hpp
 
 
 

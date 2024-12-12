@@ -4,6 +4,10 @@
 #include <filesystem>
 #include <string>
 #include <memory>
+#include <bitset>
+#include <array>
+#include <type_traits>
+#include <vector>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
@@ -15,6 +19,8 @@
 #include "base.hpp"
 #include "asserts.hpp"
 
+typedef unsigned long long          UInt64;
+typedef long long                   Int64;
 typedef int                         Int32;         
 typedef unsigned int                UInt32;        
 typedef unsigned short              UInt16;        

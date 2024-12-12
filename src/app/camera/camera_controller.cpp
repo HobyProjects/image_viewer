@@ -4,9 +4,9 @@ namespace IMGV::App
 {
     CameraController::CameraController(const Ref<IMGV::Core::Window>& window)
     {
-        m_WindowWidth = window->GetWindowSpecification().Width;
-        m_WindowHeight = window->GetWindowSpecification().Height;
-        Float aspectRatio = (Float)m_WindowWidth / (Float)m_WindowHeight;
+        m_WindowWidth       = window->GetWindowSpecification().Width;
+        m_WindowHeight      = window->GetWindowSpecification().Height;
+        Float aspectRatio   = (Float)m_WindowWidth / (Float)m_WindowHeight;
         m_Camera.SetAspectRatio((Float)m_WindowWidth / (Float)m_WindowHeight);
         m_Bounds = { -aspectRatio * m_ZoomLevel, aspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel };
     }

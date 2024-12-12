@@ -8,6 +8,8 @@
 #include "window.hpp"
 #include "timer.hpp"
 #include "log.hpp"
+#include "ecs.hpp"
+#include "components.hpp"
 
 #include "renderer.hpp"
 #include "buffers.hpp"
