@@ -13,7 +13,7 @@ namespace IMGV::App
 
     void CameraController::OnUpdate(IMGV::Core::Timer deltaTime)
     {
-
+        // Since this is a image viewer, we don't need to update the camera
     }
 
     void CameraController::OnEvent(IMGV::Core::Event& event)
