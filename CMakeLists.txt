@@ -16,6 +16,26 @@ set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
+if(CMAKE_BUILD_TYPE_INIT STREQUAL "Debug")
+    add_compile_definitions(IMGV_DEBUG)
+else()
+    add_compile_definitions(IMGV_RELEASE)
+endif()
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    add_compile_definitions(IMGV_PLATFORM_WINDOWS)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    add_compile_definitions(IMGV_PLATFORM_LINUX)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    add_compile_definitions(IMGV_PLATFORM_MACOS)
+endif()
+
+if(BUILD_SHARED_LIBS)
+    add_compile_definitions(IMGV_SHARED)
+else()
+    add_compile_definitions(IMGV_STATIC)
+endif()
+
 set(IMGV_CORE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/core)
 set(
     IMGV_CORE_INCLUDE_DIR
@@ -118,29 +138,15 @@ set(
         ${IMGV_CORE_DIR}/apis/glfw/glfw_inputs_handler.cpp
 )
 
-add_library(imgv_core STATIC ${IMGV_CORE_HEADERS} ${IMGV_CORE_SOURCES})
+if(BUILD_SHARED_LIBS)
+    add_library(imgv_core SHARED ${IMGV_CORE_HEADERS} ${IMGV_CORE_SOURCES})
+else()
+    add_library(imgv_core STATIC ${IMGV_CORE_HEADERS} ${IMGV_CORE_SOURCES})
+endif()
+
 target_include_directories(imgv_core PUBLIC ${IMGV_CORE_INCLUDE_DIR})
 target_link_libraries(imgv_core PUBLIC glad::glad glfw spdlog::spdlog glm::glm stb::stb imgui::imgui)
 
-if(CMAKE_BUILD_TYPE_INIT STREQUAL "Debug")
-    add_compile_definitions(IMGV_DEBUG)
-else()
-    add_compile_definitions(IMGV_RELEASE)
-endif()
-
-if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    add_compile_definitions(imgv_core PUBLIC IMGV_PLATFORM_WINDOWS)
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    add_compile_definitions(imgv_core PUBLIC IMGV_PLATFORM_LINUX)
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-    add_compile_definitions(imgv_core PUBLIC IMGV_PLATFORM_MACOS)
-endif()
-
-if(BUILD_SHARED_LIBS)
-    add_compile_definitions(IMGV_SHARED)
-else()
-    add_compile_definitions(IMGV_STATIC)
-endif()
 
 #####################################################################################################################################################
 
