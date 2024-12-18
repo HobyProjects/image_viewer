@@ -3,8 +3,7 @@
 
 namespace IMGV::Core
 {
-    UILayer::UILayer(Ref<Window> window, UITheme theme)
-        : Layer("UILayer"), m_Window(window), m_Theme(theme)
+    UILayer::UILayer(Ref<Window> window, UITheme theme): m_Window(window), m_Theme(theme)
     {
     }
 

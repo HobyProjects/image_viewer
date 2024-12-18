@@ -233,6 +233,7 @@ if __name__ == "__main__":
         PreCompileLibraries("glm", "lib/glm", "lib/build/config/glm", "lib/build/packages/glm", ""),
         PreCompileLibraries("imgui", "lib/imgui_docking", "lib/build/config/imgui", "lib/build/packages/imgui", ""),
         PreCompileLibraries("stb", "lib/stb_image", "lib/build/config/stb", "lib/build/packages/stb", ""),
+        PreCompileLibraries("entt", "lib/entt", "lib/build/config/entt", "lib/build/packages/entt", ""),
     ]
 
 #============================================================================================================================================
