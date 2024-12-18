@@ -67,13 +67,10 @@ namespace IMGV::Core
                 return m_compoBitset[GetComponentTypeID<T>()];
             }
 
-            inline Boolean IsAlive() const { return m_isAlive; }
-
         private:
-            Boolean m_isAlive{ IMGV_FALSE };
             ComponentBitset m_compoBitset;
             ComponentList m_compoList;
-            std::vector<std::unique_ptr<Component>> m_components;
+            std::vector<Scope<Component>> m_components;
     };
 
     class IMGV_API Component
