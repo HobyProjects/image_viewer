@@ -1,90 +1,66 @@
 #pragma once
 
+#include <entt/entt.hpp>
+
+#include "components.hpp"
 #include "typedef.hpp"
 
 namespace IMGV::Core
 {
-    class Entity;
-    class Component;
-
-    using ComponentTypeID = UInt64;
-
-    inline IMGV_API ComponentTypeID GetUniqueComponentTypeID()
-    {
-        static ComponentTypeID lastID = IMGV_NULL;
-        return lastID++;
-    }
-
-    template<typename T>
-    inline IMGV_API ComponentTypeID GetComponentTypeID()
-    {
-        static_assert(std::is_base_of<Component, T>::value, "Type is not based on component class");
-        static const ComponentTypeID typeID = GetUniqueComponentTypeID();
-        return typeID;
-    }
-
-    constexpr UInt32 MAX_ENTITIES      = 5000;
-    constexpr UInt32 MAX_COMPONENTS    = 32;
-
-    using ComponentBitset   = std::bitset<MAX_ENTITIES>;
-    using ComponentList     = std::array<Component*, MAX_COMPONENTS>;
-
     class IMGV_API Entity
     {
         public:
-            Entity() = default;
+            Entity(entt::registry* registryPtr, entt::entity handle) : m_Registry(registryPtr), m_Handle(handle) {};
             ~Entity() = default;
+
+            template<typename T>
+            inline Boolean HasComponent() const
+            {
+                return m_Registry->any_of<T>(m_Handle);
+            }
 
             template<typename T, typename... TArgs>
             inline T& InsertComponent(TArgs&&... args)
             {
-                T* component(new T(std::forward<TArgs>(args)...));
-                component->entity = this;
-                std::unique_ptr<Component> uptr{ component };
-                m_components.emplace_back(std::move(uptr));
-                if (component->Init())
-                {
-                    m_compoList[GetComponentTypeID<T>()] = component;
-                    m_compoBitset[GetComponentTypeID<T>()] = true;
-                    component->entity = this;
-                    m_isAlive = true;
-                    return *component;
-                }
-
-                return *static_cast<T*>(nullptr);
+                IMGV_ASSERT(!HasComponent<T>(), "Entity already has component");
+                return m_Registry->emplace<T>(m_Handle, std::forward<TArgs>(args)...);
             }
 
             template<typename T>
             inline T& GetComponent() const
             {
-                auto ptr(m_compoList[GetComponentTypeID<T>()]);
-                return *static_cast<T*>(ptr);
+                IMGV_ASSERT(HasComponent<T>(), "Entity does not have component");
+                return m_Registry->get<T>(m_Handle);
             }
 
             template<typename T>
-            inline Boolean HasComponent() const
+            inline void RemoveComponent()
             {
-                return m_compoBitset[GetComponentTypeID<T>()];
+                IMGV_ASSERT(HasComponent<T>(), "Entity does not have component");
+                m_Registry->remove<T>(m_Handle);
+            }
+
+
+            inline entt::entity GetHandle() const { return m_Handle; }
+            operator Boolean() const { return m_Handle != entt::null; }
+            operator UInt32() const { return (UInt32)m_Handle; }
+            operator entt::entity() const { return m_Handle; }
+
+            Boolean operator==(const Entity& other) const 
+            {
+                return m_Handle == other.m_Handle;
+            }
+
+            Boolean operator!=(const Entity& other) const 
+            {
+                return !(*this == other);
             }
 
         private:
-            ComponentBitset m_compoBitset;
-            ComponentList m_compoList;
-            std::vector<Scope<Component>> m_components;
+            entt::entity m_Handle{entt::null};
+            entt::registry* m_Registry{IMGV_NULLPTR};
     };
 
-    class IMGV_API Component
-    {
-        public:
-            Component() = default;
-            virtual ~Component() = default;
-
-            virtual Boolean Init() {}
-            virtual void Update() {}
-            virtual void Render() {}
-            virtual void Refresh() {}
-
-        public:
-            Entity* entity{ IMGV_NULLPTR };
-    };
+    IMGV_NODISCARD IMGV_API Entity CreateEntity(const String& name);
+    void IMGV_API DestroyEntity(Entity entity);
 }

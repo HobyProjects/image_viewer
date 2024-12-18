@@ -110,6 +110,7 @@ set(
         ${IMGV_CORE_DIR}/subcore/log.cpp
         ${IMGV_CORE_DIR}/subcore/window.cpp
         ${IMGV_CORE_DIR}/subcore/layer_stack.cpp
+        ${IMGV_CORE_DIR}/subcore/ecs.cpp
 
         ${IMGV_CORE_DIR}/events/events_receiver.cpp
         ${IMGV_CORE_DIR}/events/inputs_handler.cpp
