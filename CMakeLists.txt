@@ -7,6 +7,7 @@ find_package(glm REQUIRED)
 find_package(stb REQUIRED)
 find_package(imgui REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(EnTT REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -145,7 +146,7 @@ else()
 endif()
 
 target_include_directories(imgv_core PUBLIC ${IMGV_CORE_INCLUDE_DIR})
-target_link_libraries(imgv_core PUBLIC glad::glad glfw spdlog::spdlog glm::glm stb::stb imgui::imgui)
+target_link_libraries(imgv_core PUBLIC glad::glad glfw spdlog::spdlog glm::glm stb::stb imgui::imgui EnTT::EnTT)
 
 
 #####################################################################################################################################################
@@ -155,12 +156,17 @@ set(
     IMGV_APP_INCLUDE_DIR 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/app/entrypoint
         ${CMAKE_CURRENT_SOURCE_DIR}/src/app/camera
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/app/scene
 )
 
 set(
     IMGV_APP_HEADERS
         ${IMGV_APP_DIR}/camera/camera_controller.hpp
         ${IMGV_APP_DIR}/entrypoint/application.hpp
+
+        ${IMGV_APP_DIR}/scene/scene.hpp
+        ${IMGV_APP_DIR}/scene/component.hpp
+        ${IMGV_APP_DIR}/scene/entity.hpp
 )
 
 set(
@@ -168,6 +174,7 @@ set(
         ${IMGV_APP_DIR}/camera/camera_controller.cpp
         ${IMGV_APP_DIR}/entrypoint/application.cpp
         ${IMGV_APP_DIR}/entrypoint/img_view.cpp
+        ${IMGV_APP_DIR}/scene/scene.cpp
 )
 
 add_executable(img_view ${IMGV_APP_HEADERS} ${IMGV_APP_SOURCES})
