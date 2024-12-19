@@ -1,6 +1,11 @@
 #pragma once
 
 #include "typedef.hpp"
+#include "vertex_array.hpp"
+#include "buffers.hpp"
+#include "texture.hpp"
+#include "shader.hpp"
+#include "camera_2d.hpp"
 
 namespace IMGV::Core
 {
@@ -18,6 +23,8 @@ namespace IMGV::Core
             Renderer() = default;
             ~Renderer() = default;
 
+            static void Restart();
+
         public:
             static void Init();
             static void Shutdown();
@@ -27,5 +34,30 @@ namespace IMGV::Core
             static void Clear();
             static void ClearColor(const Vec4& color);
             static void SetViewport(UInt32 x, UInt32 y, UInt32 width, UInt32 height);
+
+            static void Begin(const Camera2D& camera, const Mat4& transform);
+            static void End();
+            static void Flush();
+
+            static void DrawQuad(const Vec2& position, const Vec2& size, const Vec4& color);
+            static void DrawQuad(const Vec2& position, const Vec2& size, const Vec4& color, Float rotation);
+            static void DrawQuad(const Vec2& position, const Vec2& size, const Ref<Texture2D>& texture);
+            static void DrawQuad(const Vec2& position, const Vec2& size, const Ref<Texture2D>& texture, Float rotation);
+            static void DrawQuad(const Vec2& position, const Vec2& size, const Vec4& color, const Ref<Texture2D>& texture, Float tilingFactor = 1.0f);
+            static void DrawQuad(const Vec2& position, const Vec2& size, const Vec4& color, const Ref<Texture2D>& texture, Float rotation = 1.0f, Float tilingFactor = 1.0f);
+            static void DrawQuad(const Vec2& position, const Vec2& size, const glm::vec4& color, const Ref<SubTexture2D>& texture, Float rotation, Float tilingFactor = 1.0f);
+
+            static void DrawQuad(const Mat4& transform, const Vec4& color);
+            static void DrawQuad(const Mat4& transform, const Ref<Texture2D>& texture, const Vec4& tint = Vec4(1.0f), Float tilingFactor = 1.0f);
+            static void DrawQuad(const Mat4& transform, const Ref<SubTexture2D>& texture, const Vec4& tint = Vec4(1.0f), Float tilingFactor = 1.0f);
+
+            struct Status 
+            {
+                UInt32 DrawCount{IMGV_NULL};
+                UInt32 QuadCount{IMGV_NULL};
+            };
+
+            static const Status& RenderingStatus();
+            static void StatusReset();
     };
 }

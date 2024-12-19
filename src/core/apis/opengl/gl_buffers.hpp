@@ -16,7 +16,7 @@ namespace IMGV::Core
             virtual void Bind() const override;
             virtual void Unbind() const override;
             virtual VertexBufferID GetID() const override { return m_VertexBufferID; }
-            virtual void SetData(const VertexBufferData data, UInt32 size) override;
+            virtual void SetData(const void* data, UInt32 size) override;
             virtual void SetLayout(const BufferLayout& layout) override;
             virtual const BufferLayout& GetLayout() const override { return m_Layout; }
 

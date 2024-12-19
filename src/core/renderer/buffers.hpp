@@ -90,7 +90,7 @@ namespace IMGV::Core
             virtual void Unbind() const = IMGV_NULL;
             virtual VertexBufferID GetID() const = IMGV_NULL;
 
-            virtual void SetData(const VertexBufferData data, UInt32 size) = IMGV_NULL;
+            virtual void SetData(const void* data, UInt32 size) = IMGV_NULL;
             virtual void SetLayout(const BufferLayout& layout) = IMGV_NULL;
             virtual const BufferLayout& GetLayout() const = IMGV_NULL;
     };

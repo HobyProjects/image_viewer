@@ -169,7 +169,7 @@ set(
     IMGV_APP_SOURCES
         ${IMGV_APP_DIR}/camera/camera_controller.cpp
         ${IMGV_APP_DIR}/entrypoint/application.cpp
-        ${IMGV_APP_DIR}/entrypoint/img_view.cpp
+        ${IMGV_APP_DIR}/entrypoint/main.cpp
 )
 
 add_executable(img_view ${IMGV_APP_HEADERS} ${IMGV_APP_SOURCES})
