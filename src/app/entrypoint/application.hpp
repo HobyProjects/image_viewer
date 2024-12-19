@@ -1,6 +1,7 @@
 #pragma once
 
 #include "core.hpp"
+#include "view.hpp"
 
 namespace IMGV::App
 {
@@ -29,5 +30,6 @@ namespace IMGV::App
 
             Reference<IMGV::Core::LayerStack>     m_LayerStack{IMGV_NULLPTR};
             Reference<IMGV::Core::UILayer>        m_UILayer{IMGV_NULLPTR};
+            Reference<IMGV::App::ViewLayer>       m_ViewLayer{IMGV_NULLPTR};
     };
 }

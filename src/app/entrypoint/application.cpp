@@ -13,7 +13,10 @@ namespace IMGV::App
         m_EventsReceiver->SetCallbackWindow(m_Window, IMGV_EVENT_CALLBACK(Application::OnEvent));
         IMGV::Core::Renderer::Init();
 
+        m_ViewLayer = CreateRef<ViewLayer>(m_Window, m_UILayer);
+
         PushOverlay(m_UILayer);
+        PushLayer(m_ViewLayer);
         s_Application = this;
     }
 
