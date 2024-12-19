@@ -3,6 +3,7 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ostr.h>
 
+#include "base.hpp"
 #include "typedef.hpp"
 
 namespace IMGV::Core

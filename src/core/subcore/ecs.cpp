@@ -14,6 +14,12 @@ namespace IMGV::Core
 
     void DestroyEntity(Entity* entity)
     {
+        if(entity == IMGV_NULLPTR)
+        {
+            IMGV_CORE_ERROR("Entity is null");
+            return;
+        }
+        
         s_Registry.destroy(entity->GetHandle());
     }
 }

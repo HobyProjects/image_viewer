@@ -4,7 +4,7 @@
 
 namespace IMGV::Core
 {
-    class LayerStack
+    class IMGV_API LayerStack
     {
         public:
             LayerStack() = default;

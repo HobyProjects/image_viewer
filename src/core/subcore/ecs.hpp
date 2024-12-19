@@ -2,6 +2,7 @@
 
 #include <entt/entt.hpp>
 
+#include "asserts.hpp"
 #include "components.hpp"
 #include "typedef.hpp"
 
