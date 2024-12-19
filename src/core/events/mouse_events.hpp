@@ -11,7 +11,7 @@ namespace IMGV::Core
      * This event is emitted when a mouse button is pressed. It contains the
      * button that was pressed.
      */
-    class IMGV_API MouseButtonPressEvent : public Event
+    class IMGV_API MouseButtonPressEvent final : public Event
     {
         public:
             MouseButtonPressEvent(MouseButton button) : m_Button(button) {}
@@ -32,7 +32,7 @@ namespace IMGV::Core
      * This event is emitted when a mouse button is released. It contains the
      * button that was released.
      */
-    class IMGV_API MouseButtonReleaseEvent : public Event
+    class IMGV_API MouseButtonReleaseEvent final : public Event
     {
         public:
             MouseButtonReleaseEvent(MouseButton button) : m_Button(button) {}
@@ -53,7 +53,7 @@ namespace IMGV::Core
      * This event is emitted when the mouse cursor is moved. It contains the
      * new x and y coordinates of the mouse cursor.
      */
-    class IMGV_API MouseCursorMovedEvent : public Event
+    class IMGV_API MouseCursorMovedEvent final : public Event
     {
         public:
             MouseCursorMovedEvent(Double x, Double y) : m_X(x), m_Y(y) {}
@@ -75,7 +75,7 @@ namespace IMGV::Core
      * This event is emitted when the mouse wheel is scrolled. It contains the
      * offset of the mouse wheel in x and y coordinates.
      */
-    class IMGV_API MouseScrollEvent : public Event
+    class IMGV_API MouseScrollEvent final : public Event
     {
         public:
             MouseScrollEvent(Double offsetX, Double offsetY) : m_OffsetX(offsetX), m_OffsetY(offsetY) {}
@@ -97,7 +97,7 @@ namespace IMGV::Core
      * This event is emitted when the mouse cursor enters the window,
      * indicating that the cursor has moved from outside to inside the window.
      */
-    class IMGV_API MouseCursorEnterEvent : public Event
+    class IMGV_API MouseCursorEnterEvent final : public Event
     {
         public:
             MouseCursorEnterEvent() = default;
@@ -113,7 +113,7 @@ namespace IMGV::Core
      * This event is emitted when the mouse cursor leaves the window,
      * indicating that the cursor has moved from inside to outside the window.
      */
-    class IMGV_API MouseCursorLeaveEvent : public Event
+    class IMGV_API MouseCursorLeaveEvent final : public Event
     {
         public:
             MouseCursorLeaveEvent() = default;

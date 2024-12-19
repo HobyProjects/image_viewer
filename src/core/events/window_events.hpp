@@ -1,3 +1,5 @@
+#pragma once
+
 #include "events.hpp"
 
 namespace IMGV::Core
@@ -8,7 +10,7 @@ namespace IMGV::Core
      * This event is emitted when the user closes the window, either by clicking
      * the close button or by pressing Alt+F4.
      */
-    class IMGV_API WindowCloseEvent : public Event
+    class IMGV_API WindowCloseEvent final : public Event
     {
         public:
             WindowCloseEvent() = default;
@@ -24,7 +26,7 @@ namespace IMGV::Core
      * This event is triggered whenever the window's size is changed.
      * It contains the new width and height of the window.
      */
-    class IMGV_API WindowResizeEvent : public Event
+    class IMGV_API WindowResizeEvent final : public Event
     {
         public:
             WindowResizeEvent(UInt32 width, UInt32 height) : m_Width(width), m_Height(height) {}
@@ -52,7 +54,7 @@ namespace IMGV::Core
      * The frame size is different from the client size, which is the size of
      * the window's content area.
      */
-    class IMGV_API WindowFramePixelSizeChangedEvent : public Event
+    class IMGV_API WindowFramePixelSizeChangedEvent final : public Event
     {
         public:
             WindowFramePixelSizeChangedEvent(UInt32 width, UInt32 height) : m_Width(width), m_Height(height) {}
@@ -75,7 +77,7 @@ namespace IMGV::Core
      * This event is triggered whenever the window's position is changed.
      * It contains the new x and y coordinates of the window.
      */
-    class IMGV_API WindowMovedEvent : public Event
+    class IMGV_API WindowMovedEvent final : public Event
     {
         public:
             WindowMovedEvent(UInt32 x, UInt32 y) : m_X(x), m_Y(y) {}
@@ -98,7 +100,7 @@ namespace IMGV::Core
      * This event is triggered whenever the window gains focus, indicating 
      * that it is now the active window receiving input.
      */
-    class IMGV_API WindowFocusGainedEvent : public Event
+    class IMGV_API WindowFocusGainedEvent final : public Event
     {
         public:
             WindowFocusGainedEvent() = default;
@@ -114,7 +116,7 @@ namespace IMGV::Core
      * This event is triggered whenever the window loses focus, indicating
      * that it is no longer the active window receiving input.
      */
-    class IMGV_API WindowFocusLostEvent : public Event
+    class IMGV_API WindowFocusLostEvent final : public Event
     {
         public:
             WindowFocusLostEvent() = default;
@@ -131,7 +133,7 @@ namespace IMGV::Core
      * clicking the maximize button or by calling the corresponding function
      * in the windowing API.
      */
-    class IMGV_API WindowMaximizedEvent : public Event
+    class IMGV_API WindowMaximizedEvent final : public Event
     {
         public:
             WindowMaximizedEvent() = default;
@@ -148,7 +150,7 @@ namespace IMGV::Core
      * either by clicking the minimize button or by calling the 
      * corresponding function in the windowing API.
      */
-    class IMGV_API WindowMinimizedEvent : public Event
+    class IMGV_API WindowMinimizedEvent final : public Event
     {
         public:
             WindowMinimizedEvent() = default;

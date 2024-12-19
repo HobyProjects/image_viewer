@@ -5,7 +5,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API KeyboardKeyPressEvent : public Event
+    class IMGV_API KeyboardKeyPressEvent final : public Event
     {
         public:
             KeyboardKeyPressEvent(KeyCodes keyCode) : m_KeyCode(keyCode) {}
@@ -20,7 +20,7 @@ namespace IMGV::Core
             KeyCodes m_KeyCode;
     };
 
-    class IMGV_API KeyboardKeyReleaseEvent : public Event
+    class IMGV_API KeyboardKeyReleaseEvent final : public Event
     {
         public:
             KeyboardKeyReleaseEvent(KeyCodes keyCode) : m_KeyCode(keyCode) {}
@@ -35,7 +35,7 @@ namespace IMGV::Core
             KeyCodes m_KeyCode;
     };
 
-    class IMGV_API KeyboardKeyRepeatEvent : public Event
+    class IMGV_API KeyboardKeyRepeatEvent final : public Event
     {
         public:
             KeyboardKeyRepeatEvent(KeyCodes keyCode) : m_KeyCode(keyCode) {}
@@ -50,7 +50,7 @@ namespace IMGV::Core
             KeyCodes m_KeyCode;
     };
 
-    class IMGV_API KeyboardKeyCharEvent : public Event
+    class IMGV_API KeyboardKeyCharEvent final : public Event
     {
         public:
             KeyboardKeyCharEvent(UInt32 character) : m_Character(character) {}

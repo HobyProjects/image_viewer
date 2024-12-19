@@ -8,8 +8,8 @@ namespace IMGV::Core
     class IMGV_API GL_VertexArray final : public VertexArray
     {
         public:
-            GL_VertexArray() = default;
-            virtual ~GL_VertexArray() override;
+            GL_VertexArray();
+            virtual ~GL_VertexArray();
 
             virtual void Bind() const override;
             virtual void Unbind() const override;

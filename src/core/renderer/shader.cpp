@@ -4,7 +4,7 @@
 
 namespace IMGV::Core
 {
-    Reference<Shader> CreateShader(const String& name, const std::filesystem::path& vtxShader, const std::filesystem::path& fragShader)
+    Reference<Shader> CreateShader(const String& name, const FilePath& vtxShader, const FilePath& fragShader)
     {
         switch(Renderer::GetAPI())
         {
