@@ -62,5 +62,5 @@ namespace IMGV::Core
     };
 
     IMGV_NODISCARD IMGV_API Entity CreateEntity(const String& name);
-    void IMGV_API DestroyEntity(Entity entity);
+    void IMGV_API DestroyEntity(Entity& entity);
 }

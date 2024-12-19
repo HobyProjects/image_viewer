@@ -12,7 +12,7 @@ namespace IMGV::Core
         return entity;
     }
 
-    void DestroyEntity(Entity entity)
+    void DestroyEntity(Entity& entity)
     {
         s_Registry.destroy(entity.GetHandle());
     }
