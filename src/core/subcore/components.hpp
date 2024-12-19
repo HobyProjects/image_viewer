@@ -41,12 +41,12 @@ namespace IMGV::Core
     struct IMGV_API SpriteComponent
     {
         Vec4 Color{1.0f, 1.0f, 1.0f, 1.0f};
-        Ref<Texture2D> Texture{IMGV_NULLPTR};
+        Reference<Texture2D> Texture{IMGV_NULLPTR};
         Boolean HasTextures{IMGV_FALSE};
 
         SpriteComponent() = default;
         SpriteComponent(Vec4 color) : Color(color), HasTextures(IMGV_FALSE) {}
-        SpriteComponent(Ref<Texture2D> texture) : Texture(texture), HasTextures(IMGV_TRUE) {}
+        SpriteComponent(Reference<Texture2D> texture) : Texture(texture), HasTextures(IMGV_TRUE) {}
         ~SpriteComponent() = default;
     };
 }

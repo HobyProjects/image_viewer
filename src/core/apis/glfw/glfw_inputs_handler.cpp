@@ -5,9 +5,9 @@
 
 namespace IMGV::Core
 {
-    static Ref<Window> s_TargetWindow = IMGV_NULLPTR;
+    static Reference<Window> s_TargetWindow = IMGV_NULLPTR;
 
-    void GLFW_InputHandler::TargetWindow(const Ref<Window>& window)
+    void GLFW_InputHandler::TargetWindow(const Reference<Window>& window)
     {
         s_TargetWindow = window;
     }

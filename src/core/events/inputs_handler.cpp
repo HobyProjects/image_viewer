@@ -2,7 +2,7 @@
 
 namespace IMGV::Core
 {
-    Ref<InputHandler> CreateInputHandler(ServiceAPIs api)
+    Reference<InputHandler> CreateInputHandler(ServiceAPIs api)
     {
         switch(api)
         {

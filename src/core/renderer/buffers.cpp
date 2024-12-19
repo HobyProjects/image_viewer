@@ -3,7 +3,7 @@
 
 namespace IMGV::Core
 {
-    Ref<VertexBuffer> CreateVertexBuffer(UInt32 allocatorSize)
+    Reference<VertexBuffer> CreateVertexBuffer(UInt32 allocatorSize)
     {
         switch(Renderer::GetAPI())
         {
@@ -15,7 +15,7 @@ namespace IMGV::Core
         }
     }
 
-    Ref<VertexBuffer> CreateVertexBuffer(VertexBufferData data, UInt32 size)
+    Reference<VertexBuffer> CreateVertexBuffer(VertexBufferData data, UInt32 size)
     {
         switch(Renderer::GetAPI())
         {
@@ -27,7 +27,7 @@ namespace IMGV::Core
         }
     }
 
-    Ref<IndexBuffer> CreateIndexBuffer(IndexBufferData data, UInt32 count)
+    Reference<IndexBuffer> CreateIndexBuffer(IndexBufferData data, UInt32 count)
     {
         switch(Renderer::GetAPI())
         {

@@ -26,23 +26,23 @@ namespace IMGV::Core
     {
         public:
             SubTexture2D() = default;
-            SubTexture2D(const Ref<Texture2D>& texture, const Vec2& min, const Vec2& max);
+            SubTexture2D(const Reference<Texture2D>& texture, const Vec2& min, const Vec2& max);
             ~SubTexture2D() = default;
 
-            const Ref<Texture2D>& GetTexturePtr() const { return m_Texture; }
+            const Reference<Texture2D>& GetTexturePtr() const { return m_Texture; }
             const Vec2* GetTextureCoords() const { return m_TexCoords; }
             UInt32 GetInternalFormat() const { return m_InternalFormat; }
             UInt32 GetDataFormat() const { return m_DataFormat; }
 
         private:
             static const UInt32 NUMBER_OF_TEXTURE_COORDS = 4;
-            Ref<Texture2D> m_Texture{IMGV_NULLPTR};
+            Reference<Texture2D> m_Texture{IMGV_NULLPTR};
             Vec2 m_TexCoords[NUMBER_OF_TEXTURE_COORDS];
             UInt32 m_InternalFormat{IMGV_NULL};
             UInt32 m_DataFormat{IMGV_NULL};
     };
 
-    IMGV_NODISCARD IMGV_API Ref<Texture2D> CreateTexture2D(Int32 width, Int32 height);
-    IMGV_NODISCARD IMGV_API Ref<Texture2D> CreateTexture2D(const std::filesystem::path& path, Boolean flip = IMGV_TRUE);
-    IMGV_NODISCARD IMGV_API Ref<SubTexture2D> CreateSubTexture2D(const Ref<Texture2D>& texture, const Vec2& coords, const Vec2& cellSize, const Vec2& spriteSize);
+    IMGV_NODISCARD IMGV_API Reference<Texture2D> CreateTexture2D(Int32 width, Int32 height);
+    IMGV_NODISCARD IMGV_API Reference<Texture2D> CreateTexture2D(const std::filesystem::path& path, Boolean flip = IMGV_TRUE);
+    IMGV_NODISCARD IMGV_API Reference<SubTexture2D> CreateSubTexture2D(const Reference<Texture2D>& texture, const Vec2& coords, const Vec2& cellSize, const Vec2& spriteSize);
 }

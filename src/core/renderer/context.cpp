@@ -3,7 +3,7 @@
 
 namespace IMGV::Core
 {
-    Ref<Context> IMGV::Core::CreateContext(IMGV_Window window)
+    Reference<Context> IMGV::Core::CreateContext(IMGV_Window window)
     {
         switch(Renderer::GetAPI())
         {

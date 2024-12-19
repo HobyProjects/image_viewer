@@ -13,13 +13,13 @@
 
     #ifdef IMGV_SHARED
         #ifdef IMGV_PLATFORM_WINDOWS
-            #ifdef IMGV_BUILD_DLL
+            #ifdef IMGV_BUILD_SHARED
                 #define IMGV_API __declspec(dllexport)
             #else
                 #define IMGV_API __declspec(dllimport)
             #endif
         #elif defined(IMGV_PLATFORM_LINUX)
-            #ifdef IMGV_BUILD_DLL
+            #ifdef IMGV_BUILD_SHARED
                 #define IMGV_API __attribute__((visibility("default")))
             #else
                 #define IMGV_API

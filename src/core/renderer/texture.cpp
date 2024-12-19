@@ -3,7 +3,7 @@
 
 namespace IMGV::Core
 {
-    Ref<Texture2D> CreateTexture2D(Int32 width, Int32 height)
+    Reference<Texture2D> CreateTexture2D(Int32 width, Int32 height)
     {
         switch(Renderer::GetAPI())
         {
@@ -15,7 +15,7 @@ namespace IMGV::Core
         };
     }
 
-    Ref<Texture2D> CreateTexture2D(const std::filesystem::path& path, Boolean flip)
+    Reference<Texture2D> CreateTexture2D(const std::filesystem::path& path, Boolean flip)
     {
         switch(Renderer::GetAPI())
         {
@@ -27,7 +27,7 @@ namespace IMGV::Core
         };
     }
 
-    SubTexture2D::SubTexture2D(const Ref<Texture2D>& texture, const Vec2& min, const Vec2& max)
+    SubTexture2D::SubTexture2D(const Reference<Texture2D>& texture, const Vec2& min, const Vec2& max)
     {
         m_Texture = texture;
         m_TexCoords[0] = { min.x, min.y };
@@ -36,7 +36,7 @@ namespace IMGV::Core
         m_TexCoords[3] = { min.x, max.y };
     }
 
-    Ref<SubTexture2D> CreateSubTexture2D(const Ref<Texture2D>& texture, const Vec2& coords, const Vec2& cellSize, const Vec2& spriteSize)
+    Reference<SubTexture2D> CreateSubTexture2D(const Reference<Texture2D>& texture, const Vec2& coords, const Vec2& cellSize, const Vec2& spriteSize)
     {
         Float textureWidth = static_cast<Float>(texture->GetWidth());
         Float textureHeight = static_cast<Float>(texture->GetHeight());

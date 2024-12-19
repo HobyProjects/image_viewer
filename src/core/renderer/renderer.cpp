@@ -23,19 +23,19 @@ namespace IMGV::Core
 
     struct BatchData 
     {
-        Ref<VertexArray> QuadVAO{ IMGV_NULLPTR };
-        Ref<VertexBuffer> QuadVBO{ IMGV_NULLPTR };
-        Ref<IndexBuffer> QuadIBO{ IMGV_NULLPTR };
+        Reference<VertexArray> QuadVAO{ IMGV_NULLPTR };
+        Reference<VertexBuffer> QuadVBO{ IMGV_NULLPTR };
+        Reference<IndexBuffer> QuadIBO{ IMGV_NULLPTR };
 
-        Ref<Texture2D> PlainTexture{ IMGV_NULLPTR };
+        Reference<Texture2D> PlainTexture{ IMGV_NULLPTR };
         UInt32 PlainTextureSlot{ IMGV_NULL };
         UInt32 IndexCount{ IMGV_NULL };
 
         Vertex* QuadBuffer{ IMGV_NULLPTR };
         Vertex* QuadBufferPtr{ IMGV_NULLPTR };
 
-        Ref<Shader> BatchShader{ IMGV_NULLPTR };
-        std::array<Ref<Texture2D>, MAX_TEXTURE_SLOTS> TextureSlots;
+        Reference<Shader> BatchShader{ IMGV_NULLPTR };
+        std::array<Reference<Texture2D>, MAX_TEXTURE_SLOTS> TextureSlots;
         UInt32 TextureSlotIndex{ 1 };
 
         Renderer::Status RenderingStatus;
@@ -308,22 +308,22 @@ namespace IMGV::Core
         DrawQuad(position, size, color, s_BatchData.PlainTexture, rotation, 1.0f);
     }
 
-    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const Ref<Texture2D>& texture)
+    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const Reference<Texture2D>& texture)
     {
         DrawQuad(position, size, Vec4(1.0f), texture, 0.0f, 1.0f);
     }
 
-    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const Ref<Texture2D>& texture, Float rotation)
+    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const Reference<Texture2D>& texture, Float rotation)
     {
         DrawQuad(position, size, Vec4(1.0f), texture, rotation, 1.0f);
     }
 
-    void Renderer::DrawQuad(const Vec2& position, const Vec2 & size, const Vec4& color, const Ref<Texture2D>& texture, Float tilingFactor)
+    void Renderer::DrawQuad(const Vec2& position, const Vec2 & size, const Vec4& color, const Reference<Texture2D>& texture, Float tilingFactor)
     {
         DrawQuad(position, size, color, texture, 0.0f, tilingFactor);
     }
 
-    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const Vec4& color, const Ref<Texture2D>& texture, Float rotation, Float tilingFactor)
+    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const Vec4& color, const Reference<Texture2D>& texture, Float rotation, Float tilingFactor)
     {
         if (s_BatchData.IndexCount >= MAX_INDICES || s_BatchData.TextureSlotIndex >= MAX_TEXTURE_SLOTS) 
         {
@@ -363,7 +363,7 @@ namespace IMGV::Core
 		s_BatchData.RenderingStatus.QuadCount++;
     }
 
-    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const glm::vec4& color, const Ref<SubTexture2D>& texture, Float rotation, Float tilingFactor)
+    void Renderer::DrawQuad(const Vec2& position, const Vec2& size, const glm::vec4& color, const Reference<SubTexture2D>& texture, Float rotation, Float tilingFactor)
     {
         if (s_BatchData.IndexCount >= MAX_INDICES || s_BatchData.TextureSlotIndex >= MAX_TEXTURE_SLOTS) 
         {
@@ -409,7 +409,7 @@ namespace IMGV::Core
         DrawQuad(transform, s_BatchData.PlainTexture, color, 1.0f);
     }
 
-    void Renderer::DrawQuad(const Mat4 & transform, const Ref<Texture2D>& texture, const Vec4 & tint, Float tilingFactor)
+    void Renderer::DrawQuad(const Mat4 & transform, const Reference<Texture2D>& texture, const Vec4 & tint, Float tilingFactor)
     {
         if (s_BatchData.IndexCount >= MAX_INDICES || s_BatchData.TextureSlotIndex >= MAX_TEXTURE_SLOTS) {
             Restart();
@@ -446,7 +446,7 @@ namespace IMGV::Core
         s_BatchData.RenderingStatus.QuadCount++;
     }
 
-    void Renderer::DrawQuad(const Mat4& transform, const Ref<SubTexture2D>& texture, const Vec4& tint, Float tilingFactor)
+    void Renderer::DrawQuad(const Mat4& transform, const Reference<SubTexture2D>& texture, const Vec4& tint, Float tilingFactor)
     {
         if (s_BatchData.IndexCount >= MAX_INDICES || s_BatchData.TextureSlotIndex >= MAX_TEXTURE_SLOTS) 
         {

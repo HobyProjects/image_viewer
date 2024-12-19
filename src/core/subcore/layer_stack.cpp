@@ -10,17 +10,17 @@ namespace IMGV::Core
         }
     }
 
-    void LayerStack::PushLayer(Ref<Layer> layer)
+    void LayerStack::PushLayer(Reference<Layer> layer)
     {
         m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
     }
 
-    void LayerStack::PushOverlay(Ref<Layer> overlay)
+    void LayerStack::PushOverlay(Reference<Layer> overlay)
     {
         m_Layers.emplace_back(overlay);
     }
 
-    void LayerStack::PopLayer(Ref<Layer> layer)
+    void LayerStack::PopLayer(Reference<Layer> layer)
     {
         auto it = std::find(m_Layers.begin(), m_Layers.begin() + m_LayerInsertIndex, layer);
         if(it != m_Layers.end())
@@ -31,7 +31,7 @@ namespace IMGV::Core
         }
     }
 
-    void LayerStack::PopOverlay(Ref<Layer> overlay)
+    void LayerStack::PopOverlay(Reference<Layer> overlay)
     {
         auto it = std::find(m_Layers.begin() + m_LayerInsertIndex, m_Layers.end(), overlay);
         if(it != m_Layers.end())

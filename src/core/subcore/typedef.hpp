@@ -33,19 +33,32 @@ typedef const char*                 CString;
 typedef bool                        Boolean;
 typedef void*                       IMGV_Window;    
 
-template<typename T> using Ref      = std::shared_ptr<T>;         
-template<typename T> using WeakRef  = std::weak_ptr<T>;      
-template<typename T> using Scope    = std::unique_ptr<T>;       
+template<typename T> 
+using Reference = std::shared_ptr<T>;  
 
-template<typename T, typename... Args> inline Ref<T>    CreateRef(Args&&... args) { return std::make_shared<T>(std::forward<Args>(args)...); }
-template<typename T, typename... Args> inline Scope<T>  CreateScope(Args&&... args) { return std::make_unique<T>(std::forward<Args>(args)...); }
+template<typename T> 
+using WeakRef = std::weak_ptr<T>; 
+
+template<typename T> 
+using Scope = std::unique_ptr<T>;       
+
+template<typename T, typename... Args> 
+inline Reference<T> CreateRef(Args&&... args) 
+{ 
+    return std::make_shared<T>(std::forward<Args>(args)...); 
+}
+
+template<typename T, typename... Args> 
+inline Scope<T>  CreateScope(Args&&... args) 
+{ 
+    return std::make_unique<T>(std::forward<Args>(args)...); 
+}
 
 #define IMGV_TRUE     1
 #define IMGV_FALSE    0
 #define IMGV_NULL     0
 #define IMGV_NULLPTR  nullptr
 #define IMGV_NODISCARD [[nodiscard]]
-#define IMGV_ERROR    -1
 
 //==============================================================================
 

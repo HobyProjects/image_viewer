@@ -11,11 +11,11 @@ namespace IMGV::Core
             InputHandler() = default;
             virtual ~InputHandler() = default;
 
-            virtual void TargetWindow(const Ref<Window>& window) = IMGV_NULL;
+            virtual void TargetWindow(const Reference<Window>& window) = IMGV_NULL;
             virtual Boolean IsKeyPressed(KeyCodes keyCode) = IMGV_NULL;
             virtual Boolean IsMouseButtonPressed(MouseButton button) = IMGV_NULL;
             virtual Vec2 GetMousePosition() = IMGV_NULL;
     };
 
-    IMGV_NODISCARD IMGV_API Ref<InputHandler> CreateInputHandler(ServiceAPIs api);
+    IMGV_NODISCARD IMGV_API Reference<InputHandler> CreateInputHandler(ServiceAPIs api);
 }

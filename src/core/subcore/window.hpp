@@ -66,10 +66,10 @@ namespace IMGV::Core
 
             virtual IMGV_Window GetNativeWindow() const = IMGV_NULL;
             virtual WindowSpecification& GetWindowSpecification() = IMGV_NULL;
-            virtual Ref<Context> GetContext() = IMGV_NULL;
+            virtual Reference<Context> GetContext() = IMGV_NULL;
             virtual void SwapBuffers() = IMGV_NULL;
     };
 
-    IMGV_NODISCARD IMGV_API Ref<ServiceAPI> GetPlatformServiceAPI();
-    IMGV_NODISCARD IMGV_API Ref<Window> CreateWindow(const String& title, ServiceAPIs api);
+    IMGV_NODISCARD IMGV_API Reference<ServiceAPI> GetPlatformServiceAPI();
+    IMGV_NODISCARD IMGV_API Reference<Window> CreateWindow(const String& title, ServiceAPIs api);
 }

@@ -2,7 +2,7 @@
 
 namespace IMGV::Core
 {
-    Ref<EventsReceiver> CreateEventsReceiver(ServiceAPIs api)
+    Reference<EventsReceiver> CreateEventsReceiver(ServiceAPIs api)
     {
         switch(api)
         {

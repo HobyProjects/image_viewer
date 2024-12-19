@@ -13,6 +13,6 @@ namespace IMGV::Core
             virtual ~GLFW_EventsReceiver() = default;
             
             void PollEvents() override;
-            virtual void SetCallbackWindow(const Ref<Window>& window, const EventCallBack& eventsCallback) override;
+            virtual void SetCallbackWindow(const Reference<Window>& window, const EventCallBack& eventsCallback) override;
     };
 }

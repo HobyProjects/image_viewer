@@ -17,11 +17,11 @@ namespace IMGV::Core
             virtual void Unbind() const = IMGV_NULL;
             
             virtual VertexArrayID GetID() const = IMGV_NULL;
-            virtual void EmplaceVtxBuffer(const Ref<VertexBuffer>& vtxBuffer) = IMGV_NULL;
-            virtual void EmplaceIdxBuffer(const Ref<IndexBuffer>& idxBuffer) = IMGV_NULL;
-            virtual const std::vector<Ref<VertexBuffer>>& GetVtxBuffers() const = IMGV_NULL;
-            virtual const Ref<IndexBuffer>& GetIdexBuffer() const = IMGV_NULL;
+            virtual void EmplaceVtxBuffer(const Reference<VertexBuffer>& vtxBuffer) = IMGV_NULL;
+            virtual void EmplaceIdxBuffer(const Reference<IndexBuffer>& idxBuffer) = IMGV_NULL;
+            virtual const std::vector<Reference<VertexBuffer>>& GetVtxBuffers() const = IMGV_NULL;
+            virtual const Reference<IndexBuffer>& GetIdexBuffer() const = IMGV_NULL;
     };
 
-    IMGV_NODISCARD IMGV_API Ref<VertexArray> CreateVertexArray();
+    IMGV_NODISCARD IMGV_API Reference<VertexArray> CreateVertexArray();
 }

@@ -85,13 +85,13 @@ namespace IMGV::App
         return IMGV_FALSE;
     }
 
-    void Application::PushLayer(Ref<IMGV::Core::Layer> layer)
+    void Application::PushLayer(Reference<IMGV::Core::Layer> layer)
     {
         layer->OnAttach();
         m_LayerStack->PushLayer(layer);
     }
 
-    void Application::PushOverlay(Ref<IMGV::Core::Layer> overlay)
+    void Application::PushOverlay(Reference<IMGV::Core::Layer> overlay)
     {
         overlay->OnAttach();
         m_LayerStack->PushOverlay(overlay);

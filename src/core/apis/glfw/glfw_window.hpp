@@ -27,12 +27,12 @@ namespace IMGV::Core
 
             virtual IMGV_Window GetNativeWindow() const override { return (IMGV_Window)m_NativeWindow; }
             virtual WindowSpecification& GetWindowSpecification() override { return m_Specification; }
-            virtual Ref<Context> GetContext() override { return m_Context; }
+            virtual Reference<Context> GetContext() override { return m_Context; }
             virtual void SwapBuffers() override;
 
         private:
             GLFWwindow* m_NativeWindow{IMGV_NULLPTR};
             WindowSpecification m_Specification{};
-            Ref<Context> m_Context{IMGV_NULLPTR};
+            Reference<Context> m_Context{IMGV_NULLPTR};
     };
 }

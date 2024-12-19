@@ -14,8 +14,8 @@ namespace IMGV::Core
             virtual ~EventsReceiver() = default;
 
             virtual void PollEvents() = IMGV_NULL;
-            virtual void SetCallbackWindow(const Ref<Window>& window, const EventCallBack& callBack) = IMGV_NULL;
+            virtual void SetCallbackWindow(const Reference<Window>& window, const EventCallBack& callBack) = IMGV_NULL;
     };
 
-    IMGV_NODISCARD IMGV_API Ref<EventsReceiver> CreateEventsReceiver(ServiceAPIs api);
+    IMGV_NODISCARD IMGV_API Reference<EventsReceiver> CreateEventsReceiver(ServiceAPIs api);
 }

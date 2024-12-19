@@ -28,6 +28,6 @@ namespace IMGV::Core
             virtual void CreateFrame() = IMGV_NULL;
     };
 
-    IMGV_NODISCARD IMGV_API Ref<FrameBuffer> CreateFrameBuffer(const FrameBufferSpecification& specification);
+    IMGV_NODISCARD IMGV_API Reference<FrameBuffer> CreateFrameBuffer(const FrameBufferSpecification& specification);
 
 }

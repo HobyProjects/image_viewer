@@ -7,7 +7,7 @@ namespace IMGV::App
     class CameraController
     {
         public:
-            CameraController(const Ref<IMGV::Core::Window>& window);
+            CameraController(const Reference<IMGV::Core::Window>& window);
             ~CameraController() = default;
 
             void OnUpdate(IMGV::Core::Timer deltaTime);
@@ -32,5 +32,5 @@ namespace IMGV::App
 
             UInt32 m_WindowWidth{IMGV_NULL};
             UInt32 m_WindowHeight{IMGV_NULL};
-    };
+    };  
 }

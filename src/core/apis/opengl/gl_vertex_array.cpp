@@ -44,7 +44,7 @@ namespace IMGV::Core
         return IMGV_ERROR;
     }
 
-    void GL_VertexArray::EmplaceVtxBuffer(const Ref<VertexBuffer>& vtxBuffer)
+    void GL_VertexArray::EmplaceVtxBuffer(const Reference<VertexBuffer>& vtxBuffer)
     {
         glBindVertexArray(m_VertexArrayID);
         vtxBuffer->Bind();
@@ -67,19 +67,19 @@ namespace IMGV::Core
 
         m_VtxBuffers.emplace_back(vtxBuffer);
     }
-    void GL_VertexArray::EmplaceIdxBuffer(const Ref<IndexBuffer>& idxBuffer)
+    void GL_VertexArray::EmplaceIdxBuffer(const Reference<IndexBuffer>& idxBuffer)
     {
         glBindVertexArray(m_VertexArrayID);
         m_IdexBuffer = idxBuffer;
         m_IdexBuffer->Bind();
     }
 
-    const std::vector<Ref<VertexBuffer>>& GL_VertexArray::GetVtxBuffers() const
+    const std::vector<Reference<VertexBuffer>>& GL_VertexArray::GetVtxBuffers() const
     {
         return m_VtxBuffers;
     }
     
-    const Ref<IndexBuffer>& GL_VertexArray::GetIdexBuffer() const
+    const Reference<IndexBuffer>& GL_VertexArray::GetIdexBuffer() const
     {
         return m_IdexBuffer;
     }

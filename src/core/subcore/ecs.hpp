@@ -61,6 +61,6 @@ namespace IMGV::Core
             entt::registry* m_Registry{IMGV_NULLPTR};
     };
 
-    IMGV_NODISCARD IMGV_API Entity CreateEntity(const String& name);
-    void IMGV_API DestroyEntity(Entity& entity);
+    IMGV_NODISCARD IMGV_API Entity* CreateEntity(const String& name);
+    void IMGV_API DestroyEntity(Entity* entity);
 }

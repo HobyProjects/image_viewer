@@ -5,8 +5,8 @@
 namespace IMGV::Core
 {
     static Boolean s_Initialized = IMGV_FALSE;
-    static Ref<spdlog::logger> s_CoreLogger = IMGV_NULLPTR;
-    static Ref<spdlog::logger> s_ClientLogger = IMGV_NULLPTR;
+    static Reference<spdlog::logger> s_CoreLogger = IMGV_NULLPTR;
+    static Reference<spdlog::logger> s_ClientLogger = IMGV_NULLPTR;
 
     static void Init()
     {
@@ -28,7 +28,7 @@ namespace IMGV::Core
         s_Initialized = IMGV_TRUE;
     }
 
-    Ref<spdlog::logger>& Logger::GetCoreLogger() 
+    Reference<spdlog::logger>& Logger::GetCoreLogger() 
     {
         if(!s_Initialized)
             Init();
@@ -36,7 +36,7 @@ namespace IMGV::Core
         return s_CoreLogger;
     }
 
-    Ref<spdlog::logger>& Logger::GetClientLogger() 
+    Reference<spdlog::logger>& Logger::GetClientLogger() 
     {
         if(!s_Initialized)
             Init();

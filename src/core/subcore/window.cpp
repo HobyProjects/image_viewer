@@ -3,9 +3,9 @@
 namespace IMGV::Core
 {
     static Boolean s_ServiceAPIInitialized = IMGV_FALSE;
-    static Ref<ServiceAPI> s_ServiceAPI = IMGV_NULLPTR;
+    static Reference<ServiceAPI> s_ServiceAPI = IMGV_NULLPTR;
 
-    Ref<ServiceAPI> GetPlatformServiceAPI()
+    Reference<ServiceAPI> GetPlatformServiceAPI()
     {
         #ifdef IMGV_PLATFORM_WINDOWS
             //TODO: This should be Win32 API, for now it's GLFW
@@ -38,7 +38,7 @@ namespace IMGV::Core
         #endif
     }
 
-    Ref<Window> CreateWindow(const String& title, ServiceAPIs api)
+    Reference<Window> CreateWindow(const String& title, ServiceAPIs api)
     {
         switch(api)
         {

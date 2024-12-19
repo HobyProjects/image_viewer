@@ -3,7 +3,7 @@
 
 namespace IMGV::Core
 {
-    Ref<FrameBuffer> CreateFrameBuffer(const FrameBufferSpecification& specification)
+    Reference<FrameBuffer> CreateFrameBuffer(const FrameBufferSpecification& specification)
     {
         switch(Renderer::GetAPI())
         {

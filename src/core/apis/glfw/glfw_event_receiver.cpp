@@ -2,7 +2,7 @@
 
 namespace IMGV::Core
 {
-    static Ref<Window> s_Window = IMGV_NULLPTR;
+    static Reference<Window> s_Window = IMGV_NULLPTR;
     static EventCallBack s_EventCallback;
 
     static void SetCallBacks()
@@ -132,7 +132,7 @@ namespace IMGV::Core
         glfwWaitEvents();
     }
 
-    void GLFW_EventsReceiver::SetCallbackWindow(const Ref<Window>& window, const EventCallBack & eventsCallback)
+    void GLFW_EventsReceiver::SetCallbackWindow(const Reference<Window>& window, const EventCallBack & eventsCallback)
     {
         s_Window = window;
         s_EventCallback = eventsCallback;

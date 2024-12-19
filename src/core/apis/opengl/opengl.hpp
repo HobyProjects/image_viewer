@@ -1,4 +1,4 @@
-#pragma onec
+#pragma once
 
 #include "gl_debug.hpp"
 #include "gl_buffers.hpp"

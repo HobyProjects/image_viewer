@@ -2,7 +2,7 @@
 
 namespace IMGV::App
 {
-    CameraController::CameraController(const Ref<IMGV::Core::Window>& window)
+    CameraController::CameraController(const Reference<IMGV::Core::Window>& window)
     {
         m_WindowWidth       = window->GetWindowSpecification().Width;
         m_WindowHeight      = window->GetWindowSpecification().Height;

@@ -15,14 +15,14 @@ namespace IMGV::Core
             virtual void Unbind() const override;
             
             virtual VertexArrayID GetID() const override;
-            virtual void EmplaceVtxBuffer(const Ref<VertexBuffer>& vtxBuffer) override;
-            virtual void EmplaceIdxBuffer(const Ref<IndexBuffer>& idxBuffer) override;
-            virtual const std::vector<Ref<VertexBuffer>>& GetVtxBuffers() const override;
-            virtual const Ref<IndexBuffer>& GetIdexBuffer() const override;
+            virtual void EmplaceVtxBuffer(const Reference<VertexBuffer>& vtxBuffer) override;
+            virtual void EmplaceIdxBuffer(const Reference<IndexBuffer>& idxBuffer) override;
+            virtual const std::vector<Reference<VertexBuffer>>& GetVtxBuffers() const override;
+            virtual const Reference<IndexBuffer>& GetIdexBuffer() const override;
 
         private:
             VertexArrayID m_VertexArrayID{IMGV_NULL};
-            std::vector<Ref<VertexBuffer>> m_VtxBuffers;
-            Ref<IndexBuffer> m_IdexBuffer;
+            std::vector<Reference<VertexBuffer>> m_VtxBuffers;
+            Reference<IndexBuffer> m_IdexBuffer;
     };
 }

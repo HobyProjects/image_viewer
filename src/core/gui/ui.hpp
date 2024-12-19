@@ -23,7 +23,7 @@ namespace IMGV::Core
     class UILayer final : public Layer
     {
         public:
-            UILayer(Ref<Window> window, UITheme theme = UITheme::Dark);
+            UILayer(Reference<Window> window, UITheme theme = UITheme::Dark);
             virtual ~UILayer() = default;
 
             virtual void OnAttach() override;
@@ -42,7 +42,7 @@ namespace IMGV::Core
             void SetClassicTheme();
 
         private:
-            Ref<Window> m_Window{IMGV_NULLPTR};
+            Reference<Window> m_Window{IMGV_NULLPTR};
             Boolean m_AllowEvents{IMGV_FALSE};
             UITheme m_Theme{UITheme::Dark};
     };    
