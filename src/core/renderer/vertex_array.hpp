@@ -1,7 +1,6 @@
 #pragma once
 
-#include <memory>
-
+#include "base.hpp"
 #include "buffers.hpp"
 #include "typedef.hpp"
 

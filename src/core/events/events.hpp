@@ -3,8 +3,8 @@
 #include <functional>
 #include <type_traits>
 
-#include "typedef.hpp"
 #include "base.hpp"
+#include "typedef.hpp"
 
 namespace IMGV::Core
 {

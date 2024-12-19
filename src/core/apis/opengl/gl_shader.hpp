@@ -9,7 +9,7 @@ namespace IMGV::Core
     {
         public:
             GL_Shader() = default;
-            GL_Shader(const String& name, const std::filesystem::path& vtxShader, const std::filesystem::path& fragShader);
+            GL_Shader(const String& name, const FilePath& vtxShader, const FilePath& fragShader);
             virtual ~GL_Shader();
 
             virtual void Bind() const override;
@@ -31,7 +31,7 @@ namespace IMGV::Core
 
         private:
             void CompileShaders(std::unordered_map<GLenum, String>& shaders);
-            String ReadShaderFiles(const std::filesystem::path& filePath);
+            String ReadShaderFiles(const FilePath& filePath);
 
         private:
             ShaderProgramID m_programID{IMGV_NULL};

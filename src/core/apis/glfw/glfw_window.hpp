@@ -8,7 +8,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GLFW_ServiceAPI : public ServiceAPI
+    class IMGV_API GLFW_ServiceAPI final : public ServiceAPI
     {
         public:
             GLFW_ServiceAPI() = default;
@@ -19,7 +19,7 @@ namespace IMGV::Core
             virtual ServiceAPIs GetAPI() override{ return ServiceAPIs::API_GLFW; }
     };
 
-    class IMGV_API GLFW_Window : public Window
+    class IMGV_API GLFW_Window final : public Window
     {
         public:
             GLFW_Window(const String& title);

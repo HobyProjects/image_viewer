@@ -9,7 +9,7 @@ namespace IMGV::Core
     {
         public:
             GL_Texture2D(UInt32 width, UInt32 height);
-            GL_Texture2D(const std::filesystem::path& path, Boolean flip = IMGV_TRUE);
+            GL_Texture2D(const FilePath& path, Boolean flip = IMGV_TRUE);
             virtual ~GL_Texture2D() override;
 
             virtual void Bind(UInt32 slot = 0) const override;

@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "renderer.hpp"
 #include "opengl/opengl.hpp"
 

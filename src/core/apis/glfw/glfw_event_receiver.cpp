@@ -1,4 +1,5 @@
 #include "glfw_event_receiver.hpp"
+#include "asserts.hpp"
 
 namespace IMGV::Core
 {

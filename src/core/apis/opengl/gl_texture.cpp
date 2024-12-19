@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "gl_texture.hpp"
 #include <stb/stb_image.h>
 
@@ -27,7 +28,7 @@ namespace IMGV::Core
 
     }
 
-    GL_Texture2D::GL_Texture2D(const std::filesystem::path& path, Boolean flip)
+    GL_Texture2D::GL_Texture2D(const FilePath& path, Boolean flip)
     {
         if(!std::filesystem::exists(path))
         {

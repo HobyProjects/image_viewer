@@ -4,7 +4,7 @@
 
 namespace IMGV::Core
 {
-    class IMGV_API GLFW_InputHandler : public InputHandler
+    class IMGV_API GLFW_InputHandler final : public InputHandler
     {
         public:
             GLFW_InputHandler() = default;

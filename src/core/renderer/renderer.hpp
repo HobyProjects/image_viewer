@@ -1,5 +1,6 @@
 #pragma once
 
+#include "base.hpp"
 #include "typedef.hpp"
 #include "vertex_array.hpp"
 #include "buffers.hpp"

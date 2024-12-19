@@ -8,6 +8,7 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
+#include "base.hpp"
 #include "layer.hpp"
 #include "window.hpp"
 
@@ -20,7 +21,7 @@ namespace IMGV::Core
         Classic = 2     
     };
 
-    class UILayer final : public Layer
+    class IMGV_API UILayer final : public Layer
     {
         public:
             UILayer(Reference<Window> window, UITheme theme = UITheme::Dark);

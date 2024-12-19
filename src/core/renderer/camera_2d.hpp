@@ -1,5 +1,6 @@
 #pragma once
 
+#include "base.hpp"
 #include "camera.hpp"
 
 namespace IMGV::Core

@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 
+#include "base.hpp"
 #include "gl_debug.hpp"
 #include "typedef.hpp"
 

@@ -1,8 +1,9 @@
+#include "asserts.hpp"
 #include "gl_shader.hpp"
 
 namespace IMGV::Core
 {
-    GL_Shader::GL_Shader(const String& name, const std::filesystem::path& vtxShader, const std::filesystem::path& fragShader)
+    GL_Shader::GL_Shader(const String& name, const FilePath& vtxShader, const FilePath& fragShader)
     {
         std::unordered_map<GLenum, String> shaderSources
         {
@@ -125,7 +126,7 @@ namespace IMGV::Core
         m_programID = programID;
     }
 
-    String GL_Shader::ReadShaderFiles(const std::filesystem::path& filePath)
+    String GL_Shader::ReadShaderFiles(const FilePath& filePath)
     {
         String result{};
         std::ifstream in_file(filePath, std::ios::in | std::ios::binary);
@@ -135,7 +136,6 @@ namespace IMGV::Core
             result.resize(in_file.tellg());
             in_file.seekg(0, std::ios::beg);
             in_file.read(&result[0], result.size());
-            in_file.close();
             return result;
         }
 

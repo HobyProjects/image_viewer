@@ -1,4 +1,5 @@
 #include "glfw_window.hpp"
+#include "asserts.hpp"
 
 namespace IMGV::Core
 {

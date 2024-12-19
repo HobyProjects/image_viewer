@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "ui.hpp"
 #include "renderer.hpp"
 

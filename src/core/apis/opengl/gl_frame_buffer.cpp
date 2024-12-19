@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "gl_frame_buffer.hpp"
 
 namespace IMGV::Core

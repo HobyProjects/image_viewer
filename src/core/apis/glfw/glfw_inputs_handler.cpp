@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 
 #include "glfw_inputs_handler.hpp"
+#include "asserts.hpp"
 
 namespace IMGV::Core
 {

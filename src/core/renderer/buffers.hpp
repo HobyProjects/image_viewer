@@ -3,6 +3,7 @@
 #include <vector>
 #include <initializer_list>
 
+#include "base.hpp"
 #include "typedef.hpp"
 
 namespace IMGV::Core

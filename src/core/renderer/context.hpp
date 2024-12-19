@@ -1,6 +1,8 @@
 #pragma once
 
 #include <memory>
+
+#include "base.hpp"
 #include "typedef.hpp"
 
 namespace IMGV::Core

@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "gl_vertex_array.hpp"
 
 namespace IMGV::Core
@@ -41,7 +42,7 @@ namespace IMGV::Core
         }
 
         IMGV_CORE_ERROR("Unknown component type");
-        return IMGV_ERROR;
+        return IMGV_FAILURE;
     }
 
     void GL_VertexArray::EmplaceVtxBuffer(const Reference<VertexBuffer>& vtxBuffer)

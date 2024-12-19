@@ -1,9 +1,6 @@
 #pragma once
 
-#include <filesystem>
-#include <fstream>
-#include <unordered_map>
-
+#include "base.hpp"
 #include "typedef.hpp"
 
 namespace IMGV::Core

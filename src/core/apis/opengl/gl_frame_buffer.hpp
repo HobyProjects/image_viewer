@@ -1,6 +1,8 @@
 #pragma once
 
 #include <glad/glad.h>
+
+#include "base.hpp"
 #include "frame_buffer.hpp"
 
 namespace IMGV::Core

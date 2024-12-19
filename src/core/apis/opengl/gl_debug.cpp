@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "gl_debug.hpp"
 
 namespace IMGV::Core

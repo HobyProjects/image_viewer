@@ -45,6 +45,4 @@ namespace IMGV::App
     void ViewLayer::OnUIRendering()
     {
     }
-
-
 }

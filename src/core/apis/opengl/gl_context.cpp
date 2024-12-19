@@ -1,4 +1,5 @@
 #include "gl_context.hpp"
+#include "asserts.hpp"
 
 namespace IMGV::Core
 {

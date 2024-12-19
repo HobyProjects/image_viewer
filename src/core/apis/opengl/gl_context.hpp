@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 
+#include "base.hpp"
 #include "context.hpp"
 #include "typedef.hpp"
 

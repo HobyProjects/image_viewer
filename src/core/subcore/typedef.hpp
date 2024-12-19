@@ -8,6 +8,7 @@
 #include <array>
 #include <type_traits>
 #include <vector>
+#include <unordered_map>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
@@ -28,7 +29,8 @@ using Double = double;
 using String = std::string;
 using CString = const char*;
 using Boolean = bool;
-using IMGV_Window = void*;  
+using IMGV_Window = void*; 
+using FilePath = std::filesystem::path; 
 
 template<typename T> 
 using Reference = std::shared_ptr<T>;  

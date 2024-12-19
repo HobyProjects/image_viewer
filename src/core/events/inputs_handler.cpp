@@ -1,3 +1,4 @@
+#include "asserts.hpp"
 #include "glfw/glfw.hpp"
 
 namespace IMGV::Core
